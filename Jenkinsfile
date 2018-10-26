@@ -13,10 +13,7 @@ node {
        assessContainerImage failOnPluginError: true,
            imageId: "${my_image.id}",
            thresholdRules: [
-              exploitableVulnerabilities(action: 'Mark Unstable', threshold: '1')
-            ],
-            nameRules: [
-              vulnerablePackageName(action: 'Fail', contains: 'nginx')
-           ]
+              criticalVulnerabilities(action: 'Mark Unstable', threshold: '7')
+            ]
    }
 }
