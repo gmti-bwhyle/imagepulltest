@@ -8,12 +8,12 @@ node {
        my_image = docker.build("test-app:${env.BUILD_ID}")
        echo "Built image ${my_image.id}"
    }
-   stage('Test') {
+//   stage('Test') {
        // Assess the image
-       assessContainerImage failOnPluginError: true,
-           imageId: "${my_image.id}",
-           thresholdRules: [
-              criticalVulnerabilities(action: 'Mark Unstable', threshold: '7')
-            ]
-   }
+//       assessContainerImage failOnPluginError: true,
+ //          imageId: "${my_image.id}",
+ //          thresholdRules: [
+//              criticalVulnerabilities(action: 'Mark Unstable', threshold: '7')
+//            ]
+//   }
 }
