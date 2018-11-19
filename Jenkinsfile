@@ -10,7 +10,7 @@ node {
    }
    stage('Anchore') {
        // Assess the image
-          sh 'echo "$IMAGENAME:$TAG $WORKSPACE/Dockerfile" > anchor_images'
+      sh 'echo "$IMAGENAME:$TAG ${WORKSPACE}/Dockerfile" > anchor_images'
 //       assessContainerImage failOnPluginError: true,
  //          imageId: "${my_image.id}",
  //          thresholdRules: [
