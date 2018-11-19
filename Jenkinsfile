@@ -16,5 +16,5 @@ node {
  //          thresholdRules: [
 //              criticalVulnerabilities(action: 'Mark Unstable', threshold: '7')
 //            ]
-//   }
+   }
 }
