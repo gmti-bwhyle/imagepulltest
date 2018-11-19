@@ -8,8 +8,9 @@ node {
        my_image = docker.build("test-app:${env.BUILD_ID}")
        echo "Built image ${my_image.id}"
    }
-//   stage('Test') {
+   stage('Anchore') {
        // Assess the image
+          sh 'echo "$IMAGENAME:$TAG $WORKSPACE/Dockerfile" > anchor_images'
 //       assessContainerImage failOnPluginError: true,
  //          imageId: "${my_image.id}",
  //          thresholdRules: [
