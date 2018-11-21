@@ -10,11 +10,11 @@ node {
    }
    stage('Anchore') {
        // Assess the image
-      sh 'echo "$IMAGENAME:$TAG ${WORKSPACE}/Dockerfile" > anchor_images'
-//       assessContainerImage failOnPluginError: true,
- //          imageId: "${my_image.id}",
- //          thresholdRules: [
-//              criticalVulnerabilities(action: 'Mark Unstable', threshold: '7')
-//            ]
+//     sh 'echo "$IMAGENAME:$TAG ${WORKSPACE}/Dockerfile" > anchor_images'
+       assessContainerImage failOnPluginError: true,
+           imageId: "${my_image.id}",
+           thresholdRules: [
+              criticalVulnerabilities(action: 'Mark Unstable', threshold: '7')
+            ]
    }
 }
